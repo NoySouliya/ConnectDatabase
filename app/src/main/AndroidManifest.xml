@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".EditData"></activity>
+        <activity android:name=".listview_data"></activity>
     </application>
 
 </manifest>

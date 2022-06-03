@@ -77,4 +77,15 @@ public class ConnectDatabase extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("drop table if EXISTS "+TableName);
         onCreate(sqLiteDatabase);
     }
+
+    public Cursor getAllData(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery(" select * from " + TableName, null);
+        return cursor;
+    }
+    public Cursor getData(int id, String name){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery(" select * from tb_personal where id=? ", new String[]{Integer.toString(id)}, null);
+        return cursor;
+    }
 }
